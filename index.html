@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexcss.css">
+    <title>Get Started</title>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="title-sub"><label>FIND WHAT IM CAPABLE OF</label></div>
+
+  <div class="title-start">
+    <label>DWELLER PORTFOLIO</label>
+  </div>
+  <button class="start-button type1">
+    <span class="btn-txt">Continue</span>
+  </button>  
+  <div class="words">
+    <span class="word">SCRIPTING</span>
+    <span class="word">LANGUAGES</span>
+    <span class="word">DEADLINES</span>
+    <span class="word">RESPECT</span>
+    <span class="word">DESIGN</span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const startButton = document.querySelector('.start-button');
+        const wrapper = document.querySelector('.wrapper');
+        const title = document.querySelector('.title-start')
+        const subtitle = document.querySelector('.title-sub')
+        const words = document.querySelector('.words')
+        startButton.addEventListener('click', function() {
+            wrapper.style.opacity = '1';
+            subtitle.style.opacity = '0'
+            title.style.opacity = '0'
+            words.style.opacity = '0'
+            this.style.opacity = '0';
+            this.style.pointerEvents = 'none';
+            setTimeout(function() {
+              window.location.href = 'director.html';
+            },1000);
+          });
+    });
+    </script>
+  <div class="wrapper">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+  </div>
+</body>
+</html>
