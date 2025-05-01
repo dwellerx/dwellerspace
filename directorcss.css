@@ -570,3 +570,71 @@ body {
 }
 
 
+ontainer {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+
+    .nav-buttons-container {
+        gap: 10px;
+    }
+    .pricebtn, .pastworkbtn {
+        top: 80%;
+        width: 140px;
+        font-size: 10px;
+    }
+    .pricebtn {
+        left: 90px;
+    }
+    .pastworkbtn {
+        left: 75vw;
+    }
+    .nav-buttons-container {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+
+ontainer {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+
+    .nav-buttons-container {
+        gap: 10px;
+    }
+    .pricebtn, .pastworkbtn {
+        top: 80%;
+        width: 140px;
+        font-size: 10px;
+    }
+    .pricebtn {
+        left: 90px;
+    }
+    .pastworkbtn {
+        left: 75vw;
+    }
+    .nav-buttons-container {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+
