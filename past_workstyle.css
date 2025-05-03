@@ -1,0 +1,393 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: rgb(255, 194, 123);
+    --bg-gradient: linear-gradient(135deg, #161616 0%, #2b2a2a 100%);
+    --box-shadow: 0 0 20px 5px rgb(122, 102, 79);
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Monument Extended';
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(0deg, rgb(5, 5, 5) 0%, rgb(0, 0, 0) 100%);
+    
+}
+
+.grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform: translateZ(0);
+}
+
+.grain:before {
+    content: "";
+    top: -10rem;
+    left: -10rem;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    z-index: 3;
+    position: fixed;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    opacity: 0.1;
+    pointer-events: none;
+    animation: noise 1s steps(2) infinite;
+}
+
+@keyframes noise {
+    0% { transform: translate3d(0,9rem,0); }
+    10% { transform: translate3d(-1rem,-4rem,0); }
+    20% { transform: translate3d(-8rem,2rem,0); }
+    30% { transform: translate3d(9rem,-9rem,0); }
+    40% { transform: translate3d(-2rem,7rem,0); }
+    50% { transform: translate3d(-9rem,-4rem,0); }
+    60% { transform: translate3d(2rem,6rem,0); }
+    70% { transform: translate3d(7rem,-8rem,0); }
+    80% { transform: translate3d(-9rem,1rem,0); }
+    90% { transform: translate3d(6rem,-5rem,0); }
+    100% { transform: translate3d(-7rem,0,0); }
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 700;
+    left: 50%;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(0deg, #7e7e7e 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.signature {
+    font-size: 10px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    position: relative;
+    bottom: 200px;
+    white-space: nowrap;
+    color: white
+}
+
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 400vh;
+    height: 5vh;
+    left: 0%;
+}
+.nav-btn {
+    top: 10%;
+    left: -38%;
+    position: relative;
+    font-weight: 800;
+    font-family: 'MunikaLight';
+    text-transform: uppercase;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0px 0px 42px 1px rgba(255, 255, 255, 0.20);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricebtn {
+    left: 73%;
+    top: 55%;
+    transform: translate(-340%, -80%); 
+}
+
+.pastworkbtn {
+    left: 88%;
+    top: 55%;
+    transform: translate(-448%, -80%); 
+}
+
+
+.nav-btn:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 50px 5px rgba(255, 255, 255, 0.5);
+}
+
+.section-title {
+    font-size: clamp(30px, 5vw, 50px);
+    margin-bottom: 20px;
+    font-family: 'Munika', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(0deg, #7e7e7e 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-description {
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.6;
+    max-width: 800px;
+    font-family: 'MunikaLight', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(0deg, #7e7e7e 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.05);
+}
+
+.video-showcase {
+    margin: 50px 0;
+    padding-top: 20px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Changed from minmax(100px, 1fr) */
+    gap: 20px; /* Added a reasonable gap */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Optional: set a max width */
+    
+}
+
+.video-item {
+    display: flex;
+    justify-content: center; /* Center the video horizontally */
+}
+
+.video-item video {
+    width: 90%; /* Reduced from 50% to allow for gap */
+    max-width: 500px; /* Optional: prevent videos from getting too large */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.384);
+}
+
+.reviews-section {
+    margin: 100px 0 300px;
+    padding-bottom: -10px;
+}
+
+.reviews-title {
+    font-size: clamp(20px, 3vw, 25px);
+    margin-bottom: 40px;
+    font-family: 'Munika', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(0deg, #7e7e7e 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.review-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.review-avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.review-text {
+    font-size: clamp(14px, 1.8vw, 20px);
+    line-height: 1.5;
+    font-family: 'MunikaMedium', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(0deg, #7e7e7e 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.review-stars {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.bg-decoration {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: 100%;
+    max-height: 1500px;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+@font-face {
+    font-family: 'MunikaHeavy'; 
+    src: url('fonts/munika-heavy.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'MunikaMedium'; 
+    src: url('fonts/munika-regular.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'MunikaLight'; 
+    src: url('fonts/munika-light.otf') format('opentype'); 
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-50%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 1800px) {
+    .bg-decoration {
+        display: none;
+    }  
+}
+
+@media (max-width: 1024px) {
+    .bg-decoration {
+        display: none;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .logo {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    
+    .moon {
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .price-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-content: center;
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+    
+    .signature {
+        position: static;
+        transform: rotate(0);
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-gallery,
+    .video-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bg-decoration {
+        display: none;
+    }
+    
+    .nav-btn {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-btn {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+        width: 10vh;
+    }
+    
+    .section-title,
+    .section-description {
+        text-align: center;
+    }
+    
+    .video-item video {
+        height: auto;
+    }
+    
+    .price-container {
+        gap: 6px;
+        left: -64%;
+    }
+}

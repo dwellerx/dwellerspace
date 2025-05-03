@@ -6,37 +6,84 @@
     <link rel="stylesheet" href="directorcss.css">
     <title>Get Started</title>
     <style>
-      /* Apply a default style to hide everything initially */
       body, html, .title-start, .title-start2, .title-sub, .title-sub2, .price-container, .dcbutton, .grain {
         opacity: 1;
         visibility: visible;
         transition: opacity .2s, visibility .2s;
       }
     </style>
+    <style>
+      body {
+          opacity: 0;
+          animation: fadeIn 1s forwards;
+      }
+      @keyframes fadeIn {
+          to {
+              opacity: 1;
+          }
+      }
+  </style>
 </head>
 <body>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const startButton = document.querySelector('.pricebtn');
+        const startButton = document.querySelector('.pastworkbtn');
         const wrapper = document.querySelector('.wrapper');
-        const sub2 = document.querySelector('.title-sub');
-        const sub = document.querySelector('.title-sub2');
-        const pwork = document.querySelector('.pastworkbtn')
+        const sub2 = document.querySelector('.title-sub2');
+        const pwork = document.querySelector('.pricebtn')
         const priceContainer = document.querySelector('.price-container');
+        const tmain = document.querySelector('.titleMain')
         const dcButton = document.querySelector('.dcbutton');
-        const grain = document.querySelector('.grain');
+        const tube = document.querySelector('.staintube')
         
         startButton.addEventListener('click', function() {
             wrapper.style.opacity = '1';
             sub2.style.opacity = '0';
-            sub.style.opacity = '0';
             dcButton.style.opacity = '0';
             pwork.style.opacity = '0'
+            tmain.style.opacity = '0'
+            tube.style.opacity = '0'
 
             sub2.style.visibility = 'hidden';
-            sub.style.visibility = 'hidden';
             dcButton.style.visibility = 'hidden';
             pwork.style.visibility = 'hidden';
+            tmain.style.visibility = 'hidden'
+            tube.style.visibility = 'hidden'
+
+            startButton.style.opacity = '0';
+            startButton.style.pointerEvents = 'none';  
+
+            setTimeout(function() {
+                window.location.href = 'past_works.html';  
+            }, 1000);
+        });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const startButton = document.querySelector('.pricebtn');
+        const wrapper = document.querySelector('.wrapper');
+        const sub2 = document.querySelector('.title-sub2');
+        const pwork = document.querySelector('.pastworkbtn')
+        const priceContainer = document.querySelector('.price-container');
+        const tmain = document.querySelector('.titleMain')
+        const dcButton = document.querySelector('.dcbutton');
+        const tube = document.querySelector('.staintube')
+        
+        startButton.addEventListener('click', function() {
+            wrapper.style.opacity = '1';
+            sub2.style.opacity = '0';
+            dcButton.style.opacity = '0';
+            pwork.style.opacity = '0'
+            tmain.style.opacity = '0'
+            tube.style.opacity = '0'
+
+            sub2.style.visibility = 'hidden';
+            dcButton.style.visibility = 'hidden';
+            pwork.style.visibility = 'hidden';
+            tmain.style.visibility = 'hidden'
+            tube.style.visibility = 'hidden'
 
             startButton.style.opacity = '0';
             startButton.style.pointerEvents = 'none';  
@@ -47,7 +94,7 @@
         });
     });
   </script>
-
+  <div class="titleMain" style="text-align: left;">TIME IS MONEY..<BR>SAVE BOTH.</div>
   <div class="wrapper">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -56,26 +103,23 @@
     <div class="shadow"></div>
     <div class="shadow"></div>
   </div>
-
   <div style="background-color: hsl(0, 0%, 7%); 
-  background-image: radial-gradient(circle farthest-side at center, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 13%) 25%, hsl(0, 0%, 7%) 50%, hsl(0, 0%, 7%) 100%);
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
-  </div>
-
-  <div class="title-sub">
-    <label>Hey, I'm Dweller. I'm a young passionate developer. I have made this portfolio to show off my skill. In case you're interested, contact my socials with the links listed below. Don't hesitate to ask any question related to my works and past experiences.</label>
-  </div>
-
+background-image: radial-gradient(circle farthest-side at center, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 13%) 25%, hsl(0, 0%, 7%) 50%, hsl(0, 0%, 7%) 100%);
+position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+</div>
+<body>
+  <div class="grain"></div>
   <div class="title-sub2">
     Wander around and find out what I am capable of as a young developer.<br> Feel free to ask any question and report any bugs through my discord link...<br> Prices are discussed in DMs and they're based on complexity.<br> Make sure to include all your needs in the message.
   </div>
+
+  <img class="staintube" src="/decos/staintubetrans.png" alt="image">
 
   <div class="price-container">
     <button class="pricebtn">// PRICES _ ⇒</button>
     <button class="pastworkbtn">// PWORK _ ⇒</button>
   </div>
 
-  <div class="grain"></div>
 
   <div class="dcbutton">
     <button style="background-color: transparent; border: transparent;">

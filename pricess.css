@@ -78,6 +78,15 @@ body {
     90% { transform: translate3d(6rem,-5rem,0); }
     100% { transform: translate3d(-7rem,0,0); }
 }
+.bg-decoration {
+    position: absolute;
+    right: -40%;
+    top: -20%;
+    height: 150%;
+    max-height: 1500px;
+    z-index: -1;
+    opacity: 0.8;
+}
 
 .title {
     position: absolute;
@@ -107,13 +116,61 @@ body {
     font-family: 'MunikaMedium';
     text-transform: uppercase;
     color: rgb(124, 124, 124);
-    margin: 23% auto 0; /* Keep this margin for larger screens */
+    margin: -2% auto 0; /* Keep this margin for larger screens */
     font-size: 15px;
     letter-spacing: 1px;
     left: 50%;
     transform: translateX(-50%);
 }
+.gradient-text-bw {
+    background: linear-gradient(45deg, #3f3f3f 0%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.sub-title {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 800;
+    font-family: 'HelveticaSemibold';
+    text-transform: uppercase;
+    background: linear-gradient(0deg, #636363 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: -15% auto 0; 
+    font-size: 55px;
+    letter-spacing: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.label-deco {
+    color: rgba(255, 255, 255, 0.452);
+    font-family: "UraniaBlack";
+    font-size: 400px;
+    position: absolute;
+    left: 30%;
+    top: -90%;
+    z-index: -1;
+}
+.label-deco2 {
+    color: rgba(255, 255, 255, 0.452);
+    font-family: "UraniaBlack";
+    font-size: 400px;
+    position: absolute;
+    left: -80%;
+    z-index: -1;
+}
+
+.book-handle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+}
 /* Updated media queries */
 @media (max-width: 1224px) {
     .desc {
@@ -124,7 +181,7 @@ body {
 
 @media (max-width: 1024px) {
     .desc {
-        color: rgb(124, 124, 124); /* Restore color */
+        color: rgba(255, 255, 255, 0.377); /* Restore color */
         top: 20%; /* Adjust top positioning */
     }
 }
@@ -149,8 +206,8 @@ body {
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     position: relative;
     gap: 30px; 
     padding: 40px 20px;
@@ -168,32 +225,32 @@ body {
     max-width: 300px;
     padding: 20px 10px;
     margin: 20px; 
+    border-color: rgb(255, 255, 255);
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 20px 30px 4px rgba(71, 95, 146, 0.4), 
-                0 4px 6px -4px rgba(255, 255, 255, 0.4);
+
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color .3s ease-in-out;
 }
 
 .card.standard {
-    background: linear-gradient(45deg, #2a2b57ea 0%, #496585 100%);
-    --highlight-color: #8fb3d4;
+    background: linear-gradient(45deg, #161616 0%, #2b2b2b 100%);
+    --highlight-color: #4d4d4d;
 }
 
 .card.professional {
-    background: linear-gradient(45deg, #355381ea 0%, #6a4585 100%);
+    background: linear-gradient(45deg, #1b1b1b 0%, #292929 100%);
     --highlight-color: #b38fd4;
 }
 
 .card.enterprise {
-    background: linear-gradient(45deg, #7cad83ea 0%, #474747 100%);
+    background: linear-gradient(45deg, #13131385 0%, #3b3b3b77 100%);
     --highlight-color: #d48fb3;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 35px 6px rgba(71, 95, 146, 0.5), 
+    box-shadow: 0 25px 35px 6px rgba(134, 134, 134, 0.5), 
                 0 6px 8px -4px rgba(255, 255, 255, 0.5);
 }
 
@@ -257,7 +314,7 @@ body {
     font-family: 'UraniaBlack';
     font-size: .75rem;
     padding: 0.75rem 1.5rem;
-    background-color: rgb(133, 167, 196);
+    background-color: rgb(26, 26, 26);
     border-radius: 0.5rem;
     width: 78%;
     text-shadow: 0px 4px 18px #2c3442;
@@ -266,13 +323,17 @@ body {
 }
 
 .card-button:hover {
-    background-color: rgb(110, 145, 175);
+    background-color: rgb(243, 243, 243);
+    color: #474747;
 }
 
 @media (max-width: 1424px) {
     .cards-container {
         gap: 50px;
         margin: 35% auto 0;
+    }
+    .bg-decoration {
+        display: none;
     }
 }
 

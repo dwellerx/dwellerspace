@@ -6,19 +6,29 @@
   <link rel="stylesheet" href="pricess.css" />
   <title>Prices</title>
 </head>
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
 <body>
   <div style="background-color: hsl(0, 0%, 7%); 
     background-image: radial-gradient(circle farthest-side at center, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 13%) 25%, hsl(0, 0%, 7%) 50%, hsl(0, 0%, 7%) 100%);
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
   </div>
   <div class="grain"></div>
-  <div class="title">PRICE CARDS</div>
   <div class="desc">thes prices are only examples not *final*. <br>prices will be agreed in DM and paid upfront/half-upfront</div>
+  <div class="sub-title">Take a little to look at the prices i usually give and customers agree on. Intrested? Contact me.</div>
   <div class="cards-container">
     <!-- Standard Plan -->
     <div class="card standard">
         <div class="card-content">
-            <div class="card-inside"></div>
             <h3 class="card-title">Standard</h3>
             <div class="card-price">$5-20</div>
             <p class="card-desc">Standard tasks, not too hard. <br> EX: Datastores, UI/UX Scripting <br>and more simple tasks..</p>
@@ -29,7 +39,6 @@
     <!-- Professional Plan -->
     <div class="card professional">
         <div class="card-content">
-            <div class="card-inside"></div>
             <h3 class="card-title">Mid-Complexity</h3>
             <div class="card-price">$25-50</div>
             <p class="card-desc">Mid-Solution for Complex and Standard Tasks</p>
@@ -40,12 +49,15 @@
     <!-- Enterprise Plan -->
     <div class="card enterprise">
         <div class="card-content">
-            <div class="card-inside"></div>
             <h3 class="card-title">Complex Tasks</h3>
             <div class="card-price">$60-100+</div>
             <p class="card-desc">Complete solution for frameworks, and full game debugging and more..</p>
             <button class="card-button">Get Started</button>
         </div>
+    </div>
+
+    <div class="background-elements">
+        <img src="images/torusofdoom.png" alt="Decorative background" class="bg-decoration">
     </div>
 </div>
 </div>
